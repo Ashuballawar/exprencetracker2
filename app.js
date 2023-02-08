@@ -28,7 +28,7 @@ const accessLogStream=fs.createWriteStream(path.join(__dirname,'access.log'),{fl
 
 var cors = require('cors')
 app.use(cors());
-app.use(helmet());
+//app.use(helmet());
 app.use(morgan('combined',{stream:accessLogStream}))
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json());
@@ -48,7 +48,10 @@ app.use(loginUserRouter)
 app.use('/purchase',premiumUserRouter)
 app.use('/premium',premiumfacilityRouter)
 app.use('/password',forgotpasswordrouter)
-
+app.use((req,res)=>{
+    console.log(req.url)
+    res.sendFile(path.join(__dirname,`view/${req.url}`))
+})
 sequelize.sync().then(result=>{
   
     app.listen(process.env.PORT||4000)
