@@ -4,7 +4,8 @@ const AWS=require('aws-sdk')
 const user=require('../models/userData');
 const UserService=require('../services/userservices')
 const uploadtos3=require('../services/s3services')
-const fileList=require('../models/filelist')
+const fileList=require('../models/filelist');
+const { NULL } = require('mysql2/lib/constants/types');
 function isinvalid(a){
    if(a===undefined||a.length===0){
       return true;
@@ -40,12 +41,16 @@ exports.getdata=async (req,res,next)=>{
    try{
       let page=1
       let n=5
+      
      if(req.query.page){
       page=parseInt(req.query.page)
       }
+      console.log('pagesize==>',req.query.pagesize)
       if(req.query.pagesize){
+         console.log('jahsjshjdsjhdjkhi')
          n=0+parseInt(req.query.pagesize)
       }
+      
       console.log(req.query.page)
        
         console.log("pagesize====>",n)
