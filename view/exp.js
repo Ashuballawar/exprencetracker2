@@ -250,57 +250,7 @@ ul.addEventListener('click',edititem)
 
 
     window.addEventListener('DOMContentLoaded',reload1);
-    // async function reload1(e){
-    //   let res;
-    //   fileList.innerHTML='<h5>downladed Files</h5>';
-    //   e.preventDefault();
-    //     try {
-    //         sizeofpage=localStorage.getItem('pagesize')
-    //         document.getElementById('sizeofpage').value= sizeofpage
-    //        const token=localStorage.getItem('token')
-          
-    //         res=await axios.get(`http://localhost:4000/user/getdata?pagesize=${sizeofpage}`,{headers:{'Authorization':token}});
-    //          console.log(res)
-    //                 server=res.data.data;
-    //            console.log(res)
-           
-    //         let pagitationbutton=document.getElementById('pagitation')
-    //         pagitationbutton.innerHTML="";
-    //         res.data.listOfDowloadedfile.forEach(element => {
-    //           fileList.innerHTML+=`<li>${element.fileName}</li>`
-              
-    //               });
-                
-    //              for(let i=1;i<=res.data.lastPage;i++){
-    //                 pagitationbutton.innerHTML+=`<button id="page=${i}" style="margin:5px">${i}</button>`
-    //                  }
-    //                  document.getElementById(`page=1`).style.backgroundColor='pink'
-                    
-    //                for(let i=1;i<=res.data.lastPage;i++){
-    //                 document.getElementById(`page=${i}`).onclick=(async (e)=>{
-    //                   e.preventDefault() ;
-    //                   for(let i=1;i<=res.data.lastPage;i++){document.getElementById(`page=${i}`).style.backgroundColor=''}
-    //                   document.getElementById(`page=${i}`).style.backgroundColor='pink'
-    //              let pagitationData=await axios.get(`http://localhost:4000/user/getdata?page=${i}&pagesize=${sizeofpage}`,{headers:{'Authorization':token}})
-    //              fileList.innerHTML='<h5>downladed Files</h5>'
-    //              pagitationData.data.listOfDowloadedfile.forEach(element => {
-    //                fileList.innerHTML+=`<li>${element.fileName}</li>`
-                   
-    //                    });
-                 
-    //                })  }              
-                  
-               
-               
-               
-             
-    //                } catch (error) {
-    //         document.body.innerHTML=document.body.innerHTML+`<h6>something went wrong</h6>`
-    //         console.log(error)
-    //     }  
-       
-       
-    // }
+   
     async function reload1(e){
       let res;
       fileList.innerHTML='<h5>downladed Files</h5>';
